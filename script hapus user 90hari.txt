@@ -1,0 +1,3 @@
+command untuk menon-aktifkan account yang tidak aktif selama 3bulan
+
+lastlog -b 90 | tail -n+2 | grep -v 'Never log' | awk '{print $1}' | tee -a ~/usermod-L.log | xargs -I{} usermod -L {}
